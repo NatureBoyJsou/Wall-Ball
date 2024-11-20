@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<!-- p5 core library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+	<!-- A-Frame core library -->
+	<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+	<!-- AFrameP5 library -->
+	<script src="https://craignyu.github.io/aframep5/libraries/aframep5-v2.1.js"></script>
+	<!-- Your p5 Sketch -->
+	<script src="sketch.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- Container to hold our VR scene -->
+	<a-scene id="VRScene" renderer="logarithmicDepthBuffer: true">
+		<!-- Load assets for OBJ and MTL models -->
+		<a-assets id="VRAssets">
+			<a-asset-item id="RedRoof-obj" src="images/RedRoof.obj"></a-asset-item>
+			<a-asset-item id="RedRoof-mtl" src="images/RedRoof.mtl"></a-asset-item>
+		</a-assets>
+      
+		<!-- Camera without a position attribute (we'll set this dynamically in JS) -->
+		<a-camera></a-camera>
+
+		<!-- Ground plane -->
+		<a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#228B22"></a-plane>
+
+		<!-- Sky element -->
+		<a-sky color="#87CEEB"></a-sky>
+	</a-scene>
+</body>
+</html>
